@@ -1,6 +1,6 @@
 # Simple blog
 
-Build a simple blog with Laravel 5.4 and Vuejs 2.x.
+Series: Build simple blog with Laravel 5 and Vue 2
 
 ## System requirements
 - PHP >= 5.6.4
@@ -9,3 +9,6 @@ Build a simple blog with Laravel 5.4 and Vuejs 2.x.
 - Mbstring PHP Extension
 - Tokenizer PHP Extension
 - XML PHP Extension
+
+## Series: Build simple blog with Laravel 5 and Vue 2
+- Part 1: [Install Laravel + VueJS](https://viblo.asia/huukimit/posts/V3m5WEPEZO7)

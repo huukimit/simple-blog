@@ -2,28 +2,23 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    const ROLE_USER = 1;
+    const ROLE_ADMIN = 2;
+
+    protected $table = 'users';
+    protected $fillable = ['name', 'email', 'password', 'role'];
+    protected $hidden = ['password', 'remember_token'];
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
+     * Get list of all posts of user
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'user_id');
+    }
 }
